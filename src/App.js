@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home/Home.js';
 import Nosotros from './components/pages/Nosotros/Nosotros.js';
@@ -9,10 +9,12 @@ import ItemListContainer from'./components/ItemListContainer/ItemListContainer.j
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.js';
 import Cart from './components/Cart/Cart.js';
 import NotFound from './components/pages/NotFound/NotFound';
+import {CartProvider} from './store/CartContext'
 
 function App() {
   return (
-    <div>
+    <CartProvider>
+     
       <Navbar/>
       <Routes>
         <Route path="/" element={<ItemListContainer/>}></Route>
@@ -25,7 +27,8 @@ function App() {
         <Route path="/cart" element={<Cart/>}></Route>        
         <Route path='*' element={<NotFound/>}></Route>
       </Routes>
-    </div>
+   
+    </CartProvider>
   );
 }
 

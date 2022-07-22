@@ -15,9 +15,10 @@ function ItemDetail(props) {
  
   }
 
-  const addToCart =()=>{
+  const addToCart =(count)=>{
     setTerminarCompra(true)
     setDesaparecer(false)
+    agregarAlCarrito(props.item,count);
   }
 
   const {agregarAlCarrito} =useContext(CartContext);

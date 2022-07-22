@@ -46,8 +46,6 @@ export const CartProvider = ({defaultValue=[],children}) =>{
         setCart(newCart);
     }
 
-    
-
 
     const context = {
         cart,
