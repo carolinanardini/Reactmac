@@ -1,0 +1,64 @@
+.header{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: pink;
+}
+
+.header :hover{
+    color: palevioletred;
+}
+
+.header a.active,
+.header a:active{
+    border-bottom: 3px solid rgb(248, 175, 187);
+    padding-bottom: 3px;
+}
+
+.logo{
+    height: 50px;
+}
+
+li{
+    list-style: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.categorias{
+    display: none;
+    position: absolute;
+}
+
+.categorias li{
+    display:flex;
+    text-justify: left;
+    padding: 10px;
+    z-index: 1;
+    background-color: rgb(250, 210, 217);
+}
+
+.header li:hover ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+}
+
+.columna{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    
+}
+
+.columna:hover{
+    background-color: rgb(250, 210, 217);
+}

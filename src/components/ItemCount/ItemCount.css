@@ -1,0 +1,17 @@
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numero{
+    padding-left: 25px;
+    padding-right: 25px;
+    color: palevioletred;
+}
+
+.signos{
+    padding: 10px;
+    color: palevioletred;
+    background-color: pink;
+}

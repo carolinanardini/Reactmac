@@ -1,0 +1,49 @@
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.derecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button{
+    color: pink;
+    background-color: rgb(156, 48, 84);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.large{
+    font-size: 30px;
+}
+
+.imagen{
+    background-color: pink;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.italic{
+    font-style: italic;
+    line-height: 2;
+    font-weight: 200;
+}
+
+.color{
+    color: rgb(156, 48, 84);
+}
+.center{
+    align-items: center;
+}
