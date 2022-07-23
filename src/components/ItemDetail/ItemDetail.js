@@ -9,20 +9,22 @@ function ItemDetail(props) {
   const [terminarCompra, setTerminarCompra] = useState(false)
   const [desaparecer, setDesaparecer] = useState(true)
 
+  const [num, setNum] = useState(0);
+
   const amountHandler =(newAmount) =>{
 
-    console.log(newAmount);
- 
+    setNum(newAmount);
   }
 
-  const addToCart =(count)=>{
+  const {addItem} =useContext(CartContext);
+
+  const onAdd =()=>{
     setTerminarCompra(true)
     setDesaparecer(false)
-    agregarAlCarrito(props.item,count);
+    addItem(props.detail[0],num);
   }
 
-  const {agregarAlCarrito} =useContext(CartContext);
-
+  
   return (
     <>
       {props.detail.length !==0 && 
@@ -43,7 +45,7 @@ function ItemDetail(props) {
         <p className='italic'> {props.detail[0].descripcion3}</p>
         <p className='italic'> {props.detail[0].descripcion4}</p>
         {desaparecer && <ItemCount amount={amountHandler}/>}
-        <button onClick={addToCart} className='button'><a>Agregar al carrito</a></button>
+        <button onClick={onAdd} className='button'><a>Agregar al carrito</a></button>
         {terminarCompra && <button className='button'> <NavLink to='/cart'>Terminar mi compra</NavLink></button> }
         
       </section>

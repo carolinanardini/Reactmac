@@ -1,6 +1,6 @@
-import {React, createContext, useState} from 'react';
+import {React, createContext, useState, useEffect} from 'react';
 
-export const CartContext = createContext({})
+const CartContext = createContext({})
 
 const {Provider} =CartContext
 
@@ -13,8 +13,11 @@ export const CartProvider = ({defaultValue=[],children}) =>{
         setCart ([]);
     }
 
-    const agregarAlCarrito =(item,quantity) => {
-        console.log(item)
+    useEffect(()=>{console.log(cart)},[cart]);
+
+    const addItem =(item,quantity) => {
+        console.log(item);
+
         if(isInCart(item.id)){
             const newCart = [...cart]
             for(const element of newCart){
@@ -22,7 +25,9 @@ export const CartProvider = ({defaultValue=[],children}) =>{
                 element.quantity=element.quantity+quantity;
             }
             setCart(newCart);
+
         } else{
+
         setCart(
             [
                 ...cart,
@@ -50,7 +55,7 @@ export const CartProvider = ({defaultValue=[],children}) =>{
     const context = {
         cart,
         clearCart,
-        agregarAlCarrito,
+        addItem,
         removeFomCart
     }
 
@@ -62,4 +67,4 @@ export const CartProvider = ({defaultValue=[],children}) =>{
 
 }
 
-export default CartContext
+export default CartContext;

@@ -14,7 +14,7 @@ function ItemCount(props){
             setNum(num+1)
         }
     }
-
+    
     const restar=() => {
         if (num>0){
             setNum(num-1)
@@ -25,10 +25,10 @@ function ItemCount(props){
         setNum(event.target.value)
     }
 
-    props.amount(num);
+
+    useEffect(()=>{ props.amount(num)},[num]);
 
     
-
   return (
 
     <div className='counter'>
