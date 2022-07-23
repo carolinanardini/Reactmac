@@ -1,5 +1,6 @@
 import {React, createContext, useState, useEffect} from 'react';
 
+
 const CartContext = createContext({})
 
 const {Provider} =CartContext
@@ -15,8 +16,24 @@ export const CartProvider = ({defaultValue=[],children}) =>{
 
     useEffect(()=>{console.log(cart)},[cart]);
 
+    const showCart=()=>{
+        {cart.item.map(i=>
+
+            <section className='card'>
+            <div className='centrado'>
+            <p className='titulo'>titulo: {i.nombre}</p>
+            <p>{i.img}</p>
+            <p>${i.precio}</p>
+           
+            <button className='button'>Actualizar carrito</button>
+            <button className='button'>Eliminar del carrito</button>
+            </div>
+        </section>
+
+      )}
+    }
+
     const addItem =(item,quantity) => {
-        console.log(item);
 
         if(isInCart(item.id)){
             const newCart = [...cart]
@@ -38,7 +55,6 @@ export const CartProvider = ({defaultValue=[],children}) =>{
             ]
         )
          }
-
     }
 
     const isInCart = (id) =>{
@@ -56,7 +72,8 @@ export const CartProvider = ({defaultValue=[],children}) =>{
         cart,
         clearCart,
         addItem,
-        removeFomCart
+        removeFomCart,
+        showCart
     }
 
     return(
