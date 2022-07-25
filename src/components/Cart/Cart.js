@@ -4,8 +4,8 @@ import ItemCount from '../ItemCount/ItemCount.js';
 
 function Cart (){
 
-    const {showCart} =useContext(CartContext);
-    const {clearCart} =useContext(CartContext);
+    const {showCart, clearCart} =useContext(CartContext);
+
 
 
     return(
