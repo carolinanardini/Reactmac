@@ -22,15 +22,17 @@ export const CartProvider = ({defaultValue=[],children}) =>{
       return cart.map(({item, quantity}) =>
 
         <section className='card' key={item.id}>
-        <div className='centrado'>
-        <p className='titulo'>titulo: {item.nombre}</p>
-        <p>{item.img}</p>
-        <p>${item.precio}</p>
-       
-        <button className='button'>Actualizar carrito</button>
-        <button className='button'>Eliminar del carrito</button>
-        </div>
-     </section>
+            <div className='centrado'>
+            <p className='titulo'>{item.nombre}</p>
+            <p>{item.img}</p>
+            <p>${item.precio}</p>
+            <p>cantidad: {quantity}</p>
+        
+            <button className='button'>Actualizar carrito</button>
+            <button className='button' onClick={removeFromCart}>Eliminar del carrito</button>
+            </div>
+            
+        </section>
 
      )
 
@@ -66,7 +68,7 @@ export const CartProvider = ({defaultValue=[],children}) =>{
     }
 
 
-    const removeFomCart =(id) => {
+    const removeFromCart =(id) => {
         const newCart = [...cart].filter(element =>element.item.id!==id);
         setCart(newCart);
     }
@@ -76,7 +78,7 @@ export const CartProvider = ({defaultValue=[],children}) =>{
         cart,
         clearCart,
         addItem,
-        removeFomCart,
+        removeFromCart,
         showCart
     }
 
