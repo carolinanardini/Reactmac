@@ -17,20 +17,24 @@ export const CartProvider = ({defaultValue=[],children}) =>{
     useEffect(()=>{console.log(cart)},[cart]);
 
     const showCart=()=>{
-        {cart.item.map(i=>
+       
 
-            <section className='card'>
-            <div className='centrado'>
-            <p className='titulo'>titulo: {i.nombre}</p>
-            <p>{i.img}</p>
-            <p>${i.precio}</p>
-           
-            <button className='button'>Actualizar carrito</button>
-            <button className='button'>Eliminar del carrito</button>
-            </div>
-        </section>
+      return cart.map(({item, quantity}) =>
 
-      )}
+        <section className='card' key={item.id}>
+        <div className='centrado'>
+        <p className='titulo'>titulo: {item.nombre}</p>
+        <p>{item.img}</p>
+        <p>${item.precio}</p>
+       
+        <button className='button'>Actualizar carrito</button>
+        <button className='button'>Eliminar del carrito</button>
+        </div>
+     </section>
+
+     )
+
+
     }
 
     const addItem =(item,quantity) => {

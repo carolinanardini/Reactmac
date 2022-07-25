@@ -6,13 +6,10 @@ function Cart (){
 
     const {showCart} =useContext(CartContext);
 
-    const mostrarCarrito =()=>{
-        showCart()
-    }
 
     return(
         <>
-        <button onClick={mostrarCarrito}>mostrar carrito</button>
+        {showCart()}
     
     
     
