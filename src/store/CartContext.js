@@ -29,7 +29,7 @@ export const CartProvider = ({defaultValue=[],children}) =>{
             <p>cantidad: {quantity}</p>
         
             <button className='button'>Actualizar carrito</button>
-            <button className='button' onClick={ ()=>removeFromCart(item.id)}>Eliminar del carrito</button>
+            <button className='button' onClick={()=>removeFromCart(item.id)}>Eliminar del carrito</button>
             </div>
             
         </section>
