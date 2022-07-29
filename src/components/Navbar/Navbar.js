@@ -21,7 +21,7 @@ function Navbar() {
             </ul>
           </li>
           <li> <NavLink activeclassname='active'to='/iniciarsesion'>Iniciar sesión</NavLink></li>
-          <li><CartWidget/></li>
+          <li><NavLink to='/cart'> <CartWidget/> </NavLink> </li>
        
       </header>
     </div>
