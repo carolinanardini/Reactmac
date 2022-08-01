@@ -3,28 +3,11 @@ import './ItemDetail.css';
 import {useParams, NavLink, Link} from 'react-router-dom'; 
 import {useState, useEffect, useContext } from 'react';
 import CartContext from '../../store/CartContext.js';
+import ItemButton from '../ItemButton/ItemButton'
+
 
 function ItemDetail(props) {
-  
-  const [terminarCompra, setTerminarCompra] = useState(false)
-  const [desaparecer, setDesaparecer] = useState(true)
-
-  const [num, setNum] = useState(0);
-
-  const amountHandler =(newAmount) =>{
-
-    setNum(newAmount);
-  }
-
-  const {addItem} =useContext(CartContext);
-
-  const onAdd =()=>{
-    setTerminarCompra(true)
-    setDesaparecer(false)
-    addItem(props.detail[0],num);
-  }
-
-  
+ 
   return (
     <>
       {props.detail.length !==0 && 
@@ -44,9 +27,8 @@ function ItemDetail(props) {
         <p className='italic'> {props.detail[0].descripcion2}</p>
         <p className='italic'> {props.detail[0].descripcion3}</p>
         <p className='italic'> {props.detail[0].descripcion4}</p>
-        {desaparecer && <ItemCount amount={amountHandler}/>}
-        <button onClick={onAdd} className='button'><a>Agregar al carrito</a></button>
-        {terminarCompra && <button className='button'> <NavLink to='/cart'>Terminar mi compra</NavLink></button> }
+
+       <ItemButton item={props.detail[0]}/>
         
       </section>
 

@@ -3,6 +3,7 @@ import './ItemListContainer.css';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc, collection, getDocs, query, where } from 'firebase/firestore';
 
 
 function ItemListContainer() {
@@ -10,22 +11,22 @@ function ItemListContainer() {
 
   const [info, setInfo] =useState([])
 
-  useEffect(()=>{
-    setTimeout(() => {
-      fetch('/data.json') //Trae el responde completo
-      .then((resp)=>resp.json()) //Extrae la informacion a utilizar
-      .then((data)=>{
-      if(params.idCategoria) {
-        setInfo(data.filter(i=>i.categoryId===params.idCategoria))}
-        else{
-        setInfo(data)}
-      })
-      // setInfo(data.filter(i=>i.categoryId===params.idCategoria || ! params.idCategoria ))) Setea esa info en nuestro state
-  
-    }, 5);
+  useEffect(() => {
+    const db = getFirestore();
 
+    let prod
+    if (params.idCategoria) {
+      prod = query(collection(db, "productos"), where('categoria', "==", params.idCategoria))
+    } else {
+      prod = collection(db, "productos")
+    }
 
-  },[params.idCategoria])
+    getDocs(prod).then((snapshot) => {
+
+      setInfo(snapshot.docs.map((doc) => doc.data()))
+    })
+
+  }, [params.idCategoria])
 
  
 

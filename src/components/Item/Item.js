@@ -1,11 +1,12 @@
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css';
 import {Link} from 'react-router-dom';
+import ItemButton from '../ItemButton/ItemButton';
 
 
 function Item(props) {
 
-
+console.log(props.item);
 
   return (
     <div>
@@ -15,8 +16,8 @@ function Item(props) {
           <p>{props.image}</p>
           <p>${props.price}</p>
           
-          <ItemCount amount={()=>{}}/>
-          <button className='button'>Agregar al carrito</button>
+          <ItemButton item = {props.item}/>
+
           <Link to={`/item/${props.id}`}><button className='button'>Ver detalle</button></Link>
         </div>
       </section>
