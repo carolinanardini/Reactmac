@@ -52,12 +52,18 @@ export const CartProvider = ({defaultValue=[],children}) =>{
         setCart(newCart);
     }
 
+    const initialValue=0;
+
+    const totalAmount =
+    cart.reduce((accumulator, current)=>accumulator + current.item.precio*current.quantity, initialValue)
+
 
     const context = {
         cart,
         clearCart,
         addItem,
         removeFromCart,
+        totalAmount,
         
     }
 

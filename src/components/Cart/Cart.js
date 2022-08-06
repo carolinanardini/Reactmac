@@ -1,6 +1,7 @@
 import CartContext from '../../store/CartContext.js';
 import {useState, useEffect, useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount.js';
+import ExpenseForm from '../ExpenseForm/ExpenseForm';
 
 function Cart (){
 
@@ -37,9 +38,7 @@ function Cart (){
           </section>
   
        )
-  
-  
-      }
+    }
 
     return(
         <>
@@ -48,6 +47,8 @@ function Cart (){
      
       
         <button className='button' onClick={clearCart}>Vaciar el carrito</button>
+
+        <ExpenseForm/>
         </>
     );
 

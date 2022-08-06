@@ -13,8 +13,6 @@ function ItemList(props) {
             {props.info.map(i=> <Item item={i} key={i.id} id={i.id} product={i.nombre} price={i.precio} />)}
         </div>
 
-        
-    
 
     </div>
   );
