@@ -9,18 +9,24 @@ function ItemDetailContainer() {
 
   const params =useParams()
   const [detailFetch, setDetailFetch]=useState([])
+  const [isLoading, setIsLoading]=useState(false)
  
 
 
   useEffect(() => {
+    setIsLoading(true)
+
     const db = getFirestore();
  
     let detalle = query(collection(db, "productos"), where('id', "==", Number(params.id)))
 
     getDocs(detalle).then((snapshot) => {
+      
 
       setDetailFetch(snapshot.docs.map((doc) => doc.data()))
+      setIsLoading(false)
     })
+    
 
   }, [params.id])
 
@@ -41,6 +47,8 @@ function ItemDetailContainer() {
   return (
     
     <div className="">
+
+      {isLoading && <p className='loading'>Cargando...</p>}
     
         <ItemDetail detail ={detailFetch}/>
      

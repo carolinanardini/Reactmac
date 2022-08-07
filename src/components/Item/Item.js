@@ -6,19 +6,21 @@ import ItemButton from '../ItemButton/ItemButton';
 
 function Item(props) {
 
-console.log(props.item);
+
 
   return (
     <div>
       <section className='card'>
         <div className='centrado'>
           <p className='titulo'>{props.product}</p>
-          <p>{props.image}</p>
+          <div className='imgbox'>
+          <img className='image' src={props.image}/>
+          </div>
           <p>${props.price}</p>
           
           <ItemButton item = {props.item}/>
 
-          <Link to={`/item/${props.id}`}><button className='button'>Ver detalle</button></Link>
+          <Link to={`/item/${props.id}`}><button className=''>Ver detalle</button></Link>
         </div>
       </section>
 

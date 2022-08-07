@@ -27,7 +27,7 @@ function ItemButton(props) {
 
             <ItemCount amount={amountHandler} />
             <button onClick={onAdd} className='button'>
-                <a>Agregar al carrito</a></button>
+                <a className=''>Agregar al carrito</a></button>
             {terminarCompra && <button className='button'> <NavLink to='/cart'>Terminar mi compra</NavLink></button>}
 
 

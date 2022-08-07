@@ -1,9 +1,14 @@
 .header{
-    color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: pink;
+    background-color: #e3c1be;
+    font-weight: bold;
+    color: #6c3725;
+}
+
+.fondo{
+    background-color: #e3c1be;
 }
 
 .header :hover{
@@ -17,19 +22,21 @@
 }
 
 .logo{
-    height: 50px;
+    height: 95px;
+    padding-top: 15px;
 }
 
 li{
     list-style: none;
-    color: black;
+    color: #6c3725;
     display: flex;
     align-items: center;
 }
 
 a{
     text-decoration: none;
-    color: black;
+    color: white;
+    font-weight:light;
 }
 
 .categorias{
@@ -42,7 +49,7 @@ a{
     text-justify: left;
     padding: 10px;
     z-index: 1;
-    background-color: rgb(250, 210, 217);
+    background-color: #e3c1be;;
 }
 
 .header li:hover ul{
@@ -55,10 +62,10 @@ a{
 .columna{
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: 50px;
     
 }
 
 .columna:hover{
-    background-color: rgb(250, 210, 217);
+    background-color: #e3c1be;;
 }

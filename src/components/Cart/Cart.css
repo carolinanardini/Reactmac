@@ -1,0 +1,30 @@
+.cartcard{
+    border: 0.5px solid rgb(156, 48, 84);
+    border-radius: 15px;
+    width: 80%;
+    height: 275px;
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.imagencart{
+    height: 175px;
+    margin-left: 30px;
+}
+
+.izq{
+    font-weight: 150;
+    color: rgb(156, 48, 84);
+    align-items: left;
+    
+}
+
+.textocart{
+    
+}

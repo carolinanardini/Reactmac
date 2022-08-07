@@ -15,7 +15,8 @@ function ItemDetail(props) {
       <div className='flex'>
       <section className='recuadro'>
             
-        <p className='imagen'>{props.detail[0].img}</p>
+        
+        <img className='imagen' src={props.detail[0].img}/>
           
       </section>
     

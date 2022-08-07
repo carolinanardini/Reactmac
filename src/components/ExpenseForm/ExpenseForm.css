@@ -13,8 +13,9 @@
 }
 
 .button{
-    color: pink;
-    background-color: rgb(156, 48, 84);
+    color: white;
+    font-size: bold;
+    background-color: #e3c1be;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;

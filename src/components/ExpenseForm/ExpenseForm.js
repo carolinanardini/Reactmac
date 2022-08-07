@@ -33,12 +33,13 @@ const ExpenseForm=()=>{
     
     
     const submitHandler = (event) =>{
+        console.log('asd')
         event.preventDefault();
     
         const newBuyer={
             name: newTitle,
             phone: newPhone,
-            email: new Date(newDate)
+            email: newEmail
         }
     
         const order={
@@ -47,7 +48,7 @@ const ExpenseForm=()=>{
             items: cart,
             date: Date()
         }
-
+        console.log(order)
         const db = getFirestore();
     
         const ordersCollection = collection(db,"orders")
@@ -56,19 +57,19 @@ const ExpenseForm=()=>{
     
       
     }
-    console.log(newTitle)
+
     return(
         <div className='burbuja'>
             <p>Antes de finalizar, ingresá tus datos</p>
 
             <form>
 
-                <p>Nombre: <input onChange={titleHandler} {...newTitle}/></p>
+                <p>Nombre:</p> <input value={newTitle} onChange={titleHandler}></input>
         
-                <p>Teléfono: <input onChange={phoneHandler} {...newPhone}/></p>
-                <p>Email: <input onChange={emailHandler} {...newEmail}/> </p>
+                <p>Teléfono: <input value={newPhone} onChange={phoneHandler}/></p>
+                <p>Email: <input value={newEmail} onChange={emailHandler}/> </p>
 
-                <button className='button'>Enviar</button>
+                <button onClick={submitHandler} className='button'>Enviar</button>
 
             </form>
             

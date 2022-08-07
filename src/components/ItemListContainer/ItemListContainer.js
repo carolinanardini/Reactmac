@@ -10,6 +10,7 @@ function ItemListContainer() {
   const params = useParams();
 
   const [info, setInfo] =useState([])
+  const [isLoading, setIsLoading]=useState(false)
   const [newProduct, setNewProduct] =useState([])
 
   /* AGREGAR PRODUCTO A FIREBASE DESDE DATA.JSON */
@@ -28,8 +29,9 @@ function ItemListContainer() {
     })
 
   } */
-
+ 
   useEffect(() => {
+    setIsLoading(true)
     const db = getFirestore();
 
     let prod
@@ -42,6 +44,7 @@ function ItemListContainer() {
     getDocs(prod).then((snapshot) => {
 
       setInfo(snapshot.docs.map((doc) => doc.data()))
+      setIsLoading(false)
     })
 
   }, [params.idCategoria])
@@ -50,11 +53,10 @@ function ItemListContainer() {
   return (
     
     <div className="">
+      {isLoading && <p className='loading'>Cargando...</p>}
 
-      <h2>Productos saludables y frescos</h2>
-     
-    
-        <ItemList info={info}/>
+      
+      <ItemList info={info}/>
     </div>
 
   );
