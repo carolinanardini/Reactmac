@@ -45,7 +45,7 @@ Uso de FireBase para persistencia de datos
 
 ## Aplicación en funcionamiento (gif)
 
-
+![alt text](https://github.com/carolinanardini/Reactmac/blob/main/src/components/assets/Naturally%20-%20Google%20Chrome%202022-08-08%2019-38-12.gif)
 
 ### Autor
 
