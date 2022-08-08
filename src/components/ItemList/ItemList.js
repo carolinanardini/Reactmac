@@ -10,7 +10,7 @@ function ItemList(props) {
     
 
         <div className='catalogo'>
-            {props.info.map(i=> <Item item={i} key={i.id} id={i.id} product={i.nombre} price={i.precio} image={i.img} />)}
+            {props.info.map(i=> <Item item={i} key={i.id} id={i.id} product={i.nombre} price={i.precio} image={i.img} stock={i.stock}/>)}
         </div>
 
 

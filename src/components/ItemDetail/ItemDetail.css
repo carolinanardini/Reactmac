@@ -1,5 +1,5 @@
 
-.flex{
+.flexdetail{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -10,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
 
 
 .bold{
@@ -24,7 +23,7 @@
 .imagen{
     background-color: pink;
     width: 300px;
-    height: 400px;
+    
     margin: 0 auto;
     margin-top: 25px;
 }

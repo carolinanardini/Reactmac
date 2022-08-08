@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function ItemCount(props){
 
-    const [stock, setStock] = useState(5);
+    const [stock, setStock] = useState(props.stock);
 
     const [num, setNum] = useState(0);
 

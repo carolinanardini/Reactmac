@@ -12,26 +12,26 @@ function ItemDetail(props) {
     <>
       {props.detail.length !==0 && 
       
-      <div className='flex'>
-      <section className='recuadro'>
-            
-        
-        <img className='imagen' src={props.detail[0].img}/>
+      <div className='flexdetail'>
+        <section className='recuadro'>
+              
           
-      </section>
-    
+          <img className='imagen' src={props.detail[0].img}/>
+            
+        </section>
+      
 
-      <section className='derecha'>
-        <p className='bold large'>{props.detail[0].nombre}</p>
-        
-        <p className='italic'> {props.detail[0].descripcion1}</p>
-        <p className='italic'> {props.detail[0].descripcion2}</p>
-        <p className='italic'> {props.detail[0].descripcion3}</p>
-        <p className='italic'> {props.detail[0].descripcion4}</p>
+        <section className='derecha'>
+          <p className='bold large'>{props.detail[0].nombre}</p>
+          
+          <p className='italic'> {props.detail[0].descripcion1}</p>
+          <p className='italic'> {props.detail[0].descripcion2}</p>
+          <p className='italic'> {props.detail[0].descripcion3}</p>
+          <p className='italic'> {props.detail[0].descripcion4}</p>
 
-       <ItemButton item={props.detail[0]}/>
-        
-      </section>
+          <ItemButton stock={props.detail[0].stock} item={props.detail[0]}/>
+          
+        </section>
 
     </div>}
       

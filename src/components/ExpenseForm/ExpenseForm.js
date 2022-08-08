@@ -14,6 +14,8 @@ const ExpenseForm=()=>{
     const [newEmail, setNewEmail] =useState("")
     const [newDate, setNewDate] =useState("")
     const [newOrderId, setNewOrderId] =useState("")
+    const [compraExitosa, setCompraExitosa] =useState(false)
+    
 
     const titleHandler = (event) => {
         setNewTitle(event.target.value)
@@ -33,7 +35,7 @@ const ExpenseForm=()=>{
     
     
     const submitHandler = (event) =>{
-        console.log('asd')
+        
         event.preventDefault();
     
         const newBuyer={
@@ -54,11 +56,20 @@ const ExpenseForm=()=>{
         const ordersCollection = collection(db,"orders")
     
         addDoc(ordersCollection, order).then((doc)=>setNewOrderId(doc.id))
+
+       
+      
+
+        console.log(newOrderId)
+        setCompraExitosa(true)
     
       
     }
 
     return(
+
+        <>
+        {compraExitosa && <p>Tu compra fue exitosa! Tu id de compra es 7UE8xBQXz3nTtXoraOit</p>}
         <div className='burbuja'>
             <p>Antes de finalizar, ingresá tus datos</p>
 
@@ -71,10 +82,15 @@ const ExpenseForm=()=>{
 
                 <button onClick={submitHandler} className='button'>Enviar</button>
 
-            </form>
-            
+                
 
+            </form>
+        
+           
         </div>
+
+        
+        </>
         
     );
     

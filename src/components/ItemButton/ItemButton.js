@@ -6,6 +6,7 @@ import CartContext from '../../store/CartContext.js';
 function ItemButton(props) {
 
     const [terminarCompra, setTerminarCompra] = useState(false)
+    const [desaparecer, setDesaparecer] = useState(true)
 
     const [num, setNum] = useState(0);
 
@@ -18,6 +19,7 @@ function ItemButton(props) {
 
     const onAdd = () => {
         setTerminarCompra(true)
+        setDesaparecer(false)
         addItem(props.item, num);
     }
 
@@ -25,7 +27,7 @@ function ItemButton(props) {
     return (
         <>
 
-            <ItemCount amount={amountHandler} />
+            {desaparecer && <ItemCount stock={props.stock} amount={amountHandler} />}
             <button onClick={onAdd} className='button'>
                 <a className=''>Agregar al carrito</a></button>
             {terminarCompra && <button className='button'> <NavLink to='/cart'>Terminar mi compra</NavLink></button>}

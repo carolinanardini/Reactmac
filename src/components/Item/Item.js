@@ -16,9 +16,10 @@ function Item(props) {
           <div className='imgbox'>
           <img className='image' src={props.image}/>
           </div>
-          <p>${props.price}</p>
+          <p className='precio'>${props.price}</p>
+          <p>stock: {props.stock}</p>
           
-          <ItemButton item = {props.item}/>
+          <ItemButton stock={props.stock} item = {props.item}/>
 
           <Link to={`/item/${props.id}`}><button className=''>Ver detalle</button></Link>
         </div>
